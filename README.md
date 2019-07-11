@@ -18,13 +18,13 @@ app$ ./lambda-local.js -f index -e '{"host":"", "username":"", "password": "", "
 ```
 
 #### Deploy to Lambda
-1. update Gruntfile.js
+1. Update Gruntfile.js
 
-2. build and deploy to Lambda
+2. Build and deploy to Lambda
 ```
 $ npm install
 $ grunt production
 ```
 
-#### Setup Trigger (CloudWatch Event)
+#### Setup Lambda Trigger on AWS (CloudWatch Event)
 - period 1 minute  
