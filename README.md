@@ -3,7 +3,7 @@
 AWS Aurora Serverless does not support event scheduler.
 This is alternative script.
 
-This script requires permission to access to information_schema, create database, create table.
+This script requires permissions to access to information_schema, to create a database, to create table.
 
 #### Test event scheduler
 ```
