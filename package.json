@@ -1,0 +1,9 @@
+{
+  "name": "lambda-mysql-event-scheduler",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-aws-lambda": "^0.13.0"
+  }
+}
