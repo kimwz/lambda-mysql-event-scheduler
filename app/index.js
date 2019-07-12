@@ -38,6 +38,7 @@ let checkEnvironments = async function() {
 }
 
 let updateEventScheduler = async function() {
+    await query('UPDATE lambda_scheduler.events SET STATUS = "DISABLED"')
     await query('REPLACE INTO lambda_scheduler.events\n' +
         'SELECT e.EVENT_CATALOG, e.EVENT_SCHEMA, e.EVENT_NAME, e.DEFINER, e.TIME_ZONE, e.EVENT_BODY, e.EVENT_DEFINITION, e.EVENT_TYPE, e.EXECUTE_AT, e.INTERVAL_VALUE, e.INTERVAL_FIELD, e.SQL_MODE, e.STARTS, e.ENDS, e.STATUS, e.`ON_COMPLETION`, e.CREATED, e.LAST_ALTERED, le.`LAST_EXECUTED`, e.EVENT_COMMENT, e.ORIGINATOR, e.CHARACTER_SET_CLIENT, e.COLLATION_CONNECTION, e.`DATABASE_COLLATION` FROM information_schema.events e, lambda_scheduler.events le where e.event_schema = le.event_schema and e.event_name = le.event_name')
 }
